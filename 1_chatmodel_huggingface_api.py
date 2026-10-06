@@ -8,7 +8,10 @@ llm = HuggingFaceEndpoint(
     task = "text-generation",
     huggingfacehub_api_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 )
-
 model = ChatHuggingFace(llm=llm)
-result = model.invoke('hello, how are you?')
-print(result.content)
+while True:
+
+    prompt = input("Enter your prompt: ")
+
+    result = model.invoke(prompt)
+    print(result.content)
