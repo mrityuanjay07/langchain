@@ -11,7 +11,9 @@ llm = HuggingFaceEndpoint(
 model = ChatHuggingFace(llm=llm)
 while True:
 
-    prompt = input("Enter your prompt: ")
+    prompt = input("You: ")
+    if prompt == "exit":
+        break
 
     result = model.invoke(prompt)
-    print(result.content)
+    print("Ai:",result.content)
