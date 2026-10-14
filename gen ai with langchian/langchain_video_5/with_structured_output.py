@@ -13,9 +13,11 @@ class review(BaseModel):
 
     summary:str = Field(description="give the brief summary of the review")
 
-    sentiment: Literal["pos","neg"] = Field("return the sentiment of the review either positiven negative and neutral")
+    sentiment: Literal["positive","negative"]= Field("return the sentiment of the review either positiven negative and neutral")
 
-    # name = Optional[str] = Field(default=None,description="write the name of the reviewer")
+    pros : Optional[str] = Field(default=None,description="write the pros of the review")
+
+    name : Optional[str] = Field(default=None,description="write the name of the reviewer")
 
 structured_model = model.with_structured_output(review)
 
@@ -75,3 +77,6 @@ by mrityuanjay kuamr kewat
 """)
 
 print(result.summary)
+print(result.sentiment)
+print(result.key_themes)
+print(result.name)
