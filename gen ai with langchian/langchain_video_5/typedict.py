@@ -37,4 +37,4 @@ Cons
 • No Wireless Charging: It supports fast wired 90W charging but lacks wireless charging capabilities.
 """)
 
-print(result.keys())
+print(result['cons'])
